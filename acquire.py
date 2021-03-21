@@ -23,23 +23,20 @@ def new_zillow_data():
                     prop.calculatedfinishedsquarefeet, 
                     prop.fips,
                     prop.latitude,
-                    prop.longitude, 
-                    prop.regionidcity, 
-                    prop.regionidcounty, 
-                    prop.regionidzip, 
+                    prop.longitude,  
                     prop.structuretaxvaluedollarcnt, 
                     prop.taxvaluedollarcnt, 
                     prop.landtaxvaluedollarcnt, 
                     prop.taxamount, 
-                    prop.taxdelinquencyflag, 
-                    prop.taxdelinquencyyear,
-                    prop.unitcnt
+                    prop.unitcnt,
+                    prop.propertylandusetypeid,
+                    proptype.propertylandusedesc
             FROM properties_2017 as prop
             JOIN predictions_2017 as pred USING(parcelid)
-            JOIN propertylandusetype as proptype  ON prop.propertylandusetypeid = proptype.propertylandusetypeid
+            JOIN propertylandusetype as proptype USING(propertylandusetypeid)
             WHERE pred.transactiondate BETWEEN '2017-05-01'
                                 AND '2017-08-31'
-                AND prop.unitcnt = '1'
+                AND prop.unitcnt = '1';
                 '''
     df = pd.read_sql(sql_query, get_connection('zillow'))
 
