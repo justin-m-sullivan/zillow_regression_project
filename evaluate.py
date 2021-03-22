@@ -33,6 +33,7 @@ def regression_errors(actual, predicted):
         'tss': tss(actual),
         'mse': mse(actual, predicted),
         'rmse': rmse(actual, predicted),
+        'r^2': (ess(actual, predicted))/(tss(actual)),
     })
 
 
@@ -71,7 +72,7 @@ def baseline_median_errors(actual):
         'mse': mse(actual, predicted),
         'rmse': rmse(actual, predicted),
     }
-    
+
 def better_than_baseline(actual, predicted):
     rmse_baseline = rmse(actual, actual.mean())
     rmse_model = rmse(actual, predicted)
