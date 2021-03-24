@@ -28,15 +28,15 @@ def new_zillow_data():
                     prop.taxvaluedollarcnt, 
                     prop.landtaxvaluedollarcnt, 
                     prop.taxamount, 
-                    prop.unitcnt,
                     prop.propertylandusetypeid,
                     proptype.propertylandusedesc
             FROM properties_2017 as prop
             JOIN predictions_2017 as pred USING(parcelid)
             JOIN propertylandusetype as proptype USING(propertylandusetypeid)
-            WHERE pred.transactiondate BETWEEN '2017-05-01'
-                                AND '2017-08-31'
-                AND prop.unitcnt = '1';
+            WHERE (pred.transactiondate between '2017-05-01'
+							AND '2017-08-31')
+					AND (prop.propertylandusetypeid IN (260, 261, 262, 263, 264, 265,
+                                                         268, 269, 273, 274, 275, 276, 279));
                 '''
     df = pd.read_sql(sql_query, get_connection('zillow'))
 
