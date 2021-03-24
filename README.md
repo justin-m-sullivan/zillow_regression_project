@@ -86,7 +86,21 @@
     - Baseline Accuracy
 
     
-### Modules Included in Repo
+#### Modules Included in Repo
 - acquire.py
 - prepare.py
 - explore.py
+
+### Project Process
+
+**Trello Board**
+My process and steps that I took can be viewed on my Trello board at this link:
+https://trello.com/invite/b/5UAXYMrN/6df7dfe75d97cd4c5f9be7738376d19f/zillow-regression-project
+
+
+### Key Findings
+
+- **Number of Bathrooms, Number of Bedrooms, and Finished Living Area Square Feet are the top three drivers of property value.**
+- **The mean baseline is $449682.262 and the baseline model performance can be evaluated by an RMSE of $348,740**
+- **The GLM model performs better than the baseline model with a RMSE of $289,445 on out of sample data.**
+
