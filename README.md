@@ -6,6 +6,8 @@
 
 **How is success defined:** The primary goal of this project is to utilize and hone the tools I have acquired as a data scientist by working through the data science pipeline. The secondary goal is to develop a model utilizing statistically justifiable features that performs at least as well if not better than the baseline model for predicting a single unit property's value. 
 
+**Project Presentation in Tableau:** Click <here>(https://public.tableau.com/profile/justin.sullivan#!/vizhome/Zillow_Regression_Project/Presentation) to view my project slide deck I created and presented using Tableau.
+
 ### What is included in this repo?
 
 - This Readme file:
